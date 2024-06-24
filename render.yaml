@@ -4,4 +4,4 @@ services:
     name: genius
     env: python
     buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate"
-    startCommand: "gunicorn myapp.wsgi:application"
+    startCommand: "gunicorn apps:app"
