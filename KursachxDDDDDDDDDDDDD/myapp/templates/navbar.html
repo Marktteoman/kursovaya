@@ -3,10 +3,11 @@
     <div class="container-fluid">
         <img src="{% static 'myapp/images/icon.ico' %}" alt="" height="28px" width="28px">
         <a class="navbar-brand">DGShop</a>
-        <a class="navbar-brand">Профиль</a>
-        <a class="navbar-brand">Ничего и никто</a>
+        <a class="navbar-brand" href="../profile/">Профиль</a>
+        <a class="navbar-brand" href="../register">Регистрация</a>
+        <a class="navbar-brand" href="../login">Логин</a>
         <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input name="q" class="form-control me-2" type="text" placeholder="Search" aria-label="Search" value="{{ query }}">
         <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
     </div>

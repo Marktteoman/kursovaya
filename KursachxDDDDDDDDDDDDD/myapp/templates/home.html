@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+	<div class="container">
+			<div class="mt-3">
+       			<a href="?sort=price_asc">Сортировка по возрастанию</a> | 
+        		<a href="?sort=price_desc">Сортировка по убыванию</a> |
+				<a href="?sort=in_stock">Сортировка по наличию</a> |
+				<a href="?sort=name_asc">Сортировка от А до Я</a> | 
+        		<a href="?sort=name_desc">Сортировка от Я до А</a>
+    		</div>
+		<div class="row row-cols-3 mt-3 gap-3">	
+		{% for item in items %}
+			<div class="card col mt-3" style="width: 18rem;">
+				<img src="{{item.image.url}}" alt="" class="card-img-top" alt="..." width="250px" height="300px">
+				<div class="card-body">
+					<h5 class="card-title fw-800">{{item.name}}</h5>
+					<p class="card-text text-success fw-800">{{item.price}}</p>
+					<p class="card-text">{{item.description}}</p>
+					<p class="card-text">В наличии: {{ item.in_stock }}</p>
+					<a href="{% url 'myapp:detail' item.id %}" class="btn btn-primary">К товару</a>
+				</div>
+			</div>
+		{% endfor %}
+		</div>
+	</div>
+	{% endblock content %}
