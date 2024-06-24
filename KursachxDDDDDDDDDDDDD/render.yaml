@@ -1,0 +1,7 @@
+# render.yaml
+services:
+  - type: web
+    name: genius
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 4 -b 0.0.0.0:8000 manage:app
