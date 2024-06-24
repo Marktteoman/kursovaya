@@ -3,5 +3,5 @@ services:
   - type: web
     name: genius
     env: python
-    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate"
-    startCommand: "gunicorn KursachxDDDDDDDDDDDDD.wsgi:app"
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
+    startCommand: gunicorn KursachxDDDDDDDDDDDDD.wsgi:app
