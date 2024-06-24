@@ -27,7 +27,6 @@ SECRET_KEY = 'django-insecure-=i$t0&m_mhl!yge2rqsh4@m-t%!d)8yy_x%g$svqc!c-w7f8yd
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    
     'kursovaya-m4vw.onrender.com',  # Добавить этот хост
     'localhost',
     '127.0.0.1',
@@ -139,3 +138,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
 CART_SESSION_ID = 'cart'
+
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+instance_path = os.path.join(basedir, 'KursachxDDDDDDDDDDDDD')
+
+# SECRET_KEY = os.environ.get('SECRET_KEY') or secrets.token_hex(16)
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(instance_path, 'db.sqlite3')
+SQLALCHEMY_TRACK_MODIFICATIONS = False
